@@ -1,0 +1,54 @@
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/local/home/davsuar/serverRFIDB2/node_modules/mysql/lib/protocol/Protocol.js:112:13)
+    at Socket.<anonymous> (/local/home/davsuar/serverRFIDB2/node_modules/mysql/lib/Connection.js:94:28)
+    at Socket.<anonymous> (/local/home/davsuar/serverRFIDB2/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:525:35)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (/local/home/davsuar/serverRFIDB2/node_modules/mysql/lib/Connection.js:423:8)
+    at Protocol.emit (node:events:513:28)
+    at Protocol._delegateError (/local/home/davsuar/serverRFIDB2/node_modules/mysql/lib/protocol/Protocol.js:398:10)
+    at Protocol.end (/local/home/davsuar/serverRFIDB2/node_modules/mysql/lib/protocol/Protocol.js:116:8)
+    at Socket.<anonymous> (/local/home/davsuar/serverRFIDB2/node_modules/mysql/lib/Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+Node.js[26987]: ../src/node.cc:785:void node::ResetStdio(): Assertion `!(err != 0) || (err == -1 && (*__errno_location ()) == 1)' failed.
+ 1: 0xb090e0 node::Abort() [node]
+ 2: 0xb0915e  [node]
+ 3: 0xac7da4 node::ResetStdio() [node]
+ 4: 0x7f2902acb5ac  [/lib64/libc.so.6]
+ 5: 0x7f2902acb5fa  [/lib64/libc.so.6]
+ 6: 0xa473bd  [node]
+ 7: 0xa8ce53 node::Environment::Exit(int) [node]
+ 8: 0xb0b45a node::errors::TriggerUncaughtException(v8::Isolate*, v8::Local<v8::Value>, v8::Local<v8::Message>, bool) [node]
+ 9: 0xb0b9e0 node::errors::PerIsolateMessageListener(v8::Local<v8::Message>, v8::Local<v8::Value>) [node]
+10: 0xe33700 v8::internal::MessageHandler::ReportMessageNoExceptions(v8::internal::Isolate*, v8::internal::MessageLocation const*, v8::internal::Handle<v8::internal::Object>, v8::Local<v8::Value>) [node]
+11: 0xe338db v8::internal::MessageHandler::ReportMessage(v8::internal::Isolate*, v8::internal::MessageLocation const*, v8::internal::Handle<v8::internal::JSMessageObject>) [node]
+12: 0xe2496e v8::internal::Isolate::ReportPendingMessages() [node]
+13: 0xe0d218  [node]
+14: 0xe0dc7f v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*) [node]
+15: 0xcfdd52 v8::Function::Call(v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) [node]
+16: 0xa42d6f node::InternalCallbackScope::Close() [node]
+17: 0xa43115 node::InternalMakeCallback(node::Environment*, v8::Local<v8::Object>, v8::Local<v8::Object>, v8::Local<v8::Function>, int, v8::Local<v8::Value>*, node::async_context) [node]
+18: 0xa537c9 node::AsyncWrap::MakeCallback(v8::Local<v8::Function>, int, v8::Local<v8::Value>*) [node]
+19: 0xbda788  [node]
+20: 0xbdd3ef node::EmitToJSStreamListener::OnStreamRead(long, uv_buf_t const&) [node]
+21: 0xbe50dd node::LibuvStreamWrap::OnUvRead(long, uv_buf_t const*) [node]
+22: 0xbe54c4  [node]
+23: 0x155865c  [node]
+24: 0x1558c00  [node]
+25: 0x155ede4  [node]
+26: 0x154d008 uv_run [node]
+27: 0xa43975 node::SpinEventLoop(node::Environment*) [node]
+28: 0xb4b146 node::NodeMainInstance::Run() [node]
+29: 0xaccbcc node::Start(int, char**) [node]
+30: 0x7f2902ab613a __libc_start_main [/lib64/libc.so.6]
+31: 0xa408ec  [node]

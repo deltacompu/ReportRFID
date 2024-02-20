@@ -1,0 +1,2 @@
+Server running on port: ${port}
+Connected to database
